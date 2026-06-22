@@ -1,0 +1,116 @@
+/* 1. VARIÁVEIS DE TEMA (Paleta de Cores Padrão - Escuro) */
+:root{
+--bg:#0f172a;
+--card:#1e293b;
+--button:#334155;
+--text:white;
+--operator:#f97316;
+--equal:#22c55e;
+}
+
+/* 2. ALTERNÂNCIA DE TEMA (Tema Claro acionado dinamicamente) */
+body.light{
+--bg:#f1f5f9;
+--card:white;
+--button:#e2e8f0;
+--text:#111827;
+}
+
+/* 3. RESET UNIVERSAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* 4. POSICIONAMENTO DO CORPO */
+body{
+    background:var(--bg);
+    min-height:100vh;
+    display:flex;
+    justify-content:center; /* Centraliza horizontalmente */
+    align-items:center; /* Centraliza verticalmente */
+    transition:.3s; /* Transição suave ao mudar de tema */
+}
+
+/* 5. O CORPO DA CALCULADORA */
+.calculator{
+    width:450px;
+    background:var(--card);
+    border-radius:25px;     /* Bordas arredondadas e elegantes */
+    overflow:hidden;
+    box-shadow:0 20px 60px rgba(0,0,0,.4); /* Sombra de profundidade */
+}
+
+.top-bar{
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text);
+}
+
+.top-bar button{
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* 6. GRADE DE BOTÕES (O Coração da Interface */
+.buttons {
+display: grid;
+grid-template-columns: repeat(5, 1fr); /* Cria exatamente 5 colunas iguais */
+gap: 10px;
+padding: 20px;
+}
+
+/* 7. CUSTOMIZAÇÃO DOS BOTÕES */
+#themeToggle{
+width:50px;
+}
+
+.history-panel{
+max-height:120px;
+overflow:auto;
+padding:10px 20px;
+color:var(--text);
+}
+
+.display{
+padding:20px;
+text-align:right;
+color:var(--text);
+}
+
+#expression{font-size:1.2rem;min-height:30px;}
+#result{font-size:2.5rem;font-weight:bold;}
+
+.buttons{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:10px;
+padding:20px;
+}
+
+button{
+height:65px;
+border:none;
+border-radius:15px;
+font-size:1.1rem;
+cursor:pointer;
+background:var(--button);
+color:var(--text);
+}
+
+.operator{background:var(--operator);}
+.equal{background:var(--equal);}
+.zero{grid-column:span 2;}
+
+button:hover{transform:translateY(-2px);}
+
+@media(max-width:500px){
+.calculator{width:95%;}
+}

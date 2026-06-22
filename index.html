@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <div class="top-bar">
+                <h2>CALCULADORA</h2>
+                <button id="themeToggle"></button>
+            </div>
+
+            <div class="history-panel">
+                <ul id="historyList"></ul>
+            </div>
+    
+            <div class="display">
+                <div id="expression"></div>
+                <div id="result">0</div>
+            </div>
+    
+            <div class="buttons">
+    
+                <!-- Botões de controle e operadores -->
+                <button onclick="clearAll()" class="danger">AC</button>
+                <button onclick="backspace()">⌫</button>
+                <button onclick="insert('(')">(</button>
+                <button onclick="insert(')')">)</button>
+                <button onclick="insert('/') " class="operator">/</button>
+    
+                <!-- Funções Científicas Avançadas -->
+                <button onclick="insert('sin(')">sin</button>
+                <button onclick="insert('cos(')">cos</button>
+                <button onclick="insert('tan(')">tan</button>
+                <button onclick="insert('Math.sqrt(')">√</button>
+                <button onclick="insert('*')" class="operator">x</button>
+    
+                <!-- Números e Operadores Básicos -->
+                <button onclick="insert('7')">7</button>
+                <button onclick="insert('8')">8</button>
+                <button onclick="insert('9')">9</button>
+                <button onclick="insert('-')" class="operator">-</button>
+                <button onclick="insert('Math.pow(')">x^</button>
+    
+                <button onclick="insert('4')">4</button>
+                <button onclick="insert('5')">5</button>
+                <button onclick="insert('6')">6</button>
+                <button onclick="insert('+')" class="operator">+</button>
+                <button onclick="insert('Math.log10(')">log</button>
+    
+                <button onclick="insert('1')">1</button>
+                <button onclick="insert('2')">2</button>
+                <button onclick="insert('3')">3</button>
+                <button onclick="insert('%')">%</button>
+                <button onclick="insert('Math.E')">e</button>
+    
+                <button onclick="insert('0')" class="zero">0</button>
+                <button onclick="insert('.')">.</button>
+                <button onclick="insert('Math.PI')">π</button>
+                <button onclick="calculate()" class="equal">=</button>    
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    </body>
+    </html>
